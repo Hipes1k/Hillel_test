@@ -67,4 +67,3 @@ def make_dict():
     """
     res = dict(zip(fake_names, ready_mails_list))
     return res
-

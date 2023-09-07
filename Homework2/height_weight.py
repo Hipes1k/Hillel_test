@@ -1,7 +1,7 @@
 import csv
 height_inches = []
 weight_pounds = []
-with open('csv files/hw (1).csv') as csvfile:
+with open('hw.csv') as csvfile:
 
     reader = csv.DictReader(csvfile)
     for row in reader:
@@ -11,12 +11,14 @@ with open('csv files/hw (1).csv') as csvfile:
 height_inches_redacted = []
 weight_pounds_redacted = []
 
+
 def height_inches_func():
     for i in height_inches:
         i_split = i.replace(' ', '')
         i_split = int(float(i_split))
         height_inches_redacted.append(i_split)
     return height_inches_redacted
+
 
 def weight_pounds_func():
     for i in weight_pounds:
@@ -26,5 +28,11 @@ def weight_pounds_func():
     return weight_pounds_redacted
 
 
-result = f'Avg Height: {(sum(height_inches_func())/25000)*2.54} cm, Avg Weight: {(sum(weight_pounds_func())/25000)*0.453592} kg'
-print(result)
+weight_kg = f'Average Weight, kg: {(sum(weight_pounds_func())/ 25000) * 0.453592}'
+height_cm = f'Average Height, cm: {(sum(height_inches_func())/ 25000) * 2.54}'
+
+def weight_height_kg_cm():
+    return weight_kg, height_cm
+
+
+
