@@ -1,6 +1,6 @@
 from flask import Flask
-from test import make_dict
-from test2 import result
+from mailsgenerator import make_dict
+from height_weight import result
 
 app = Flask(__name__)
 
@@ -14,4 +14,3 @@ def about():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
