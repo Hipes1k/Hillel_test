@@ -1,7 +1,4 @@
-from flask import Flask, jsonify
-from mailsgenerator import make_dict
-from height_weight import weight_height_kg_cm
-from jinja2 import Template
+from flask import Flask, jsonify, render_template
 import requests
 
 
@@ -16,12 +13,12 @@ def requirements():
 
 @app.route('/generate-users/', methods=['GET'])
 def generate_users():
-    return Template("{{ make_dict() }}").render(make_dict=make_dict)
+    return render_template('text.txt')
 
 
 @app.route('/mean/', methods=['GET'])
 def mean():
-    return Template("{{ weight_height_kg_cm() }}").render(weight_height_kg_cm=weight_height_kg_cm)
+    return render_template('weight_height.txt')
 
 
 @app.route("/space/", methods=['GET'])

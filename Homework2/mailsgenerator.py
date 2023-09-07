@@ -67,3 +67,7 @@ def make_dict():
     """
     res = dict(zip(fake_names, ready_mails_list))
     return res
+
+with open('templates/text.txt', 'w') as file:
+  for key, value in make_dict().items():
+    file.write(f'{key}, {value}\n')

@@ -34,5 +34,9 @@ height_cm = f'Average Height, cm: {(sum(height_inches_func())/ 25000) * 2.54}'
 def weight_height_kg_cm():
     return weight_kg, height_cm
 
+with open('templates/weight_height.txt', 'w') as file:
+  for i in weight_height_kg_cm():
+    file.write(i)
+
 
 
