@@ -13,12 +13,9 @@ class Circle:
         self.radius = radius
 
     def contains(self):
-        if self.x ** 2 + self.y ** 2 <= self.radius ** 2:
-            return True
-        else:
-            return False
+        return self.x ** 2 + self.y ** 2 <= self.radius ** 2
 
 
-p = Point(4, 4)
+p = Point(1, 4)
 c = Circle(p.x, p.y, 5)
 print(c.contains())
