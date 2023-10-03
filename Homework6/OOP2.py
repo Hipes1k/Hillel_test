@@ -56,9 +56,9 @@ class Colorizer:
         self.color = color
 
     def __enter__(self):
-        for key in self.colors.keys():
-            if key == self.color:
-                print(self.colors[self.color], end='')
+
+        return print(self.colors.get(self.color, self.colors['default']), end='')
+
     def __exit__(self, exc_type, exc_value, traceback):
         print(self.colors['default'], end='')
 
