@@ -2,19 +2,17 @@ import functools
 import requests
 from collections import OrderedDict
 from memory_profiler import memory_usage
-import time
 
 
 def time_deco(func):
     def wrapper(*args, **kwargs):
-        start_time = time.time()
         start_memory = memory_usage()[0]
 
         result = func(*args, **kwargs)
         end_memory = memory_usage()[0]
-        end_time = time.time()
 
-        print(f'Time to perform function {func.__name__}: {end_time - start_time} seconds, Memory Used: {end_memory-start_memory} MB')
+
+        print(f'Memory Used: {end_memory-start_memory} MB')
         return result
     return wrapper
 
