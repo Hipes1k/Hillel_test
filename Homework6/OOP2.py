@@ -1,3 +1,4 @@
+#1
 class frange:
     def __init__(self, *args):
         arg_number = len(args)
