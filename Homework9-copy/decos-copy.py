@@ -4,7 +4,7 @@ from collections import OrderedDict
 from memory_profiler import memory_usage
 
 
-def time_deco(func):
+def memory_deco(func):
     def wrapper(*args, **kwargs):
         start_memory = memory_usage()[0]
 
