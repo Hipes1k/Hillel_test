@@ -38,11 +38,7 @@ def solution(number):
 
 
 def filter_list(l):
-    l2 = []
-    for i in l:
-        if isinstance(i, int):
-            l2.append(i)
-    return l2
+    return [x for x in l if isinstance(x, int)]
 
 #3
 # Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in
@@ -51,12 +47,9 @@ def filter_list(l):
 
 def descending_order(num):
     num = str(num)
-    list = []
-    for nums in num:
-        list.append(nums)
-        list.sort()
-    desc_str = ''.join(reversed(list))
-    return int(desc_str)
+    desc_ord = ''.join(sorted(num, reverse=True))
+    return int(desc_ord)
+
 
 
 
@@ -89,9 +82,7 @@ def is_square(n):
 def validate_pin(pin):
     lst = []
     if len(pin) == 4 or len(pin) == 6:
-        for i in pin:
-            if i.isdigit():
-                lst.append(i)
-    if len(lst) == 4 or len(lst) == 6:
-        return True
+        if pin.isdigit():
+            lst.append(pin)
+            return True
     return False
