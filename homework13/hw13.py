@@ -37,8 +37,8 @@ def solution(number):
 # filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 
 
-def filter_list(l):
-    return [x for x in l if isinstance(x, int)]
+def filter_list(input_data):
+    return [value for value in input_data if isinstance(value, int)]
 
 #3
 # Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in
@@ -47,8 +47,8 @@ def filter_list(l):
 
 def descending_order(num):
     num = str(num)
-    desc_ord = ''.join(sorted(num, reverse=True))
-    return int(desc_ord)
+    desc_order = ''.join(sorted(num, reverse=True))
+    return int(desc_order)
 
 
 
@@ -63,9 +63,9 @@ def descending_order(num):
 # The tests will always use some integral number, so don't worry about that in dynamic typed languages.
 
 
-def is_square(n):
-    if n>=0:
-        if int(n**.5)**2 == n:
+def is_square(input_data):
+    if input_data >= 0:
+        if int(input_data**.5)**2 == n:
             return True
     return False
 
@@ -80,9 +80,9 @@ def is_square(n):
 
 
 def validate_pin(pin):
-    lst = []
+    lst_of_values = []
     if len(pin) == 4 or len(pin) == 6:
         if pin.isdigit():
-            lst.append(pin)
+            lst_of_values.append(pin)
             return True
     return False
