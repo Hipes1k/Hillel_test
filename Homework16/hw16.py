@@ -36,3 +36,10 @@
 #     all_other = ('(' + ''.join(lst[0:3]) + ')') + ' ' + ''.join(lst[3:6]) + '-' + ''.join(lst[6:])
 #     return all_other
 # (create_phone_number([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+
+
+# OR
+
+
+# def create_phone_number(n):
+# 	return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
