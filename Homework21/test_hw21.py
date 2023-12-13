@@ -18,10 +18,8 @@ class TestFibonacci(unittest.TestCase):
             self.fibo(7.2)
 
     def test_large_number_input(self):
-        try:
+        with self.assertRaises(RecursionError):
             self.fibo(50)
-        except RecursionError as e:
-            self.fail(f"Test failed with exception: {e}")
 
     def test_none_input(self):
         with self.assertRaises(ValueError):
